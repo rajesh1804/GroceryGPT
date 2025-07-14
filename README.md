@@ -23,17 +23,8 @@
 
 ## 🖼️ Architecture Overview
 
-```mermaid
-flowchart TD
-    UI[User Input via Streamlit UI]
-    UI -->|Query| Session[Session Tracker]
-    UI -->|Query| Embedder[Sentence Transformer Embedder]
-    Embedder --> WeaviateDB[Weaviate Vector DB]
-    WeaviateDB -->|Raw Results| UI
-    UI -->|Results + Query| Reranker[LLM via OpenRouter]
-    Reranker -->|Re-ranked Output| UI
-    UI --> Suggestions[Recent Personalized Suggestions]
-```
+![alt text](architecture.png)
+
 ---
 
 ## 🧪 Example Flow
