@@ -18,6 +18,6 @@ if query:
         reranked = rerank_results(query, results)
     st.markdown(reranked)
 
-st.write("📈 Based on your history, you might like:")
+st.write("### 📈 Based on your history, you might like:")
 for kw in get_personalized_keywords():
     st.markdown(f"- {kw}")
