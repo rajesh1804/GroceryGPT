@@ -3,7 +3,7 @@ from search_agent import semantic_search
 from session_agent import store_user_query, get_personalized_keywords
 from llm_agent import rerank_results
 
-st.title("🛒 GroceryGPT+ - LLM + CLIP Search")
+st.title("🛒 GroceryGPT+")
 
 query = st.text_input("What are you looking for today?")
 if query:
