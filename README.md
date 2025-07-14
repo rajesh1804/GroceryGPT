@@ -23,7 +23,7 @@
 
 ## 🖼️ Architecture Overview
 
-![alt text](architecture.png)
+![alt text](assets/architecture.png)
 
 ---
 
@@ -42,7 +42,7 @@
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/yourusername/grocerygpt.git
+git clone https://github.com/rajesh1804/grocerygpt.git
 cd grocerygpt
 pip install -r requirements.txt
 ```
@@ -75,17 +75,7 @@ streamlit run main.py
 
 ## 📁 Project Structure
 
-grocerygpt/
-├── app/
-│ ├── main.py # Streamlit UI
-│ ├── llm_agent.py # LLM reranking logic
-│ ├── llm_utils.py # Model ping, fallback, caching
-│ ├── search_agent.py # Vector DB indexing & search
-│ └── session_agent.py # Session-based personalization
-├── data/
-│ └── products_cleaned.csv # Product dataset
-├── requirements.txt
-└── README.md
+![alt text](assets/project_structure.png)
 
 ---
 
