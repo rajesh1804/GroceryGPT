@@ -5,7 +5,7 @@
 [![Powered by OpenRouter](https://img.shields.io/badge/LLM-Qwen%2FMistral-green)](https://openrouter.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **GroceryGPT+** is a multimodal-ready, LLM-powered grocery product search engine that delivers smart, personalized results using semantic search and Large Language Model (LLM) reranking.
+> 🚀 **GroceryGPT+** is a smart, real-time product search app combining **semantic vector search** with **LLM-powered reranking** and **personalized recommendations** — all production-ready.
 
 ---
 
