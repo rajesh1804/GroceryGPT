@@ -57,7 +57,7 @@ pinned: false
 👉 Try it on [Hugging Face](https://huggingface.co/spaces/rajesh1804/grocerygpt)
 
 <p align="center">
-  <img src="assets/grocerygpt-demo.webp" alt="Demo" width="600"/>
+  <img src="https://github.com/rajesh1804/grocerygpt/raw/main/assets/grocerygpt-demo.webp" alt="Demo" width="600"/>
 </p>
 
 ---
