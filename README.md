@@ -34,6 +34,60 @@ pinned: false
 
 ---
 
+## 🧠 How It Works — Under the Hood of GroceryGPT+
+
+GroceryGPT+ isn't just another AI demo — it's a **modular, production-grade AI search system**. Here's how each part fits together to deliver accurate, real-time, and personalized product results.
+
+### 🔍 1. Semantic Search with Vector Embeddings
+
+User queries like _"vegan snacks under 150 calories"_ are first embedded using **`sentence-transformers`** (MiniLM). This allows semantic similarity — not just keyword matches — against product descriptions indexed in **Weaviate**, a powerful vector database.
+
+> ✅ **Why it matters**: Enables natural language search — users can search like they think.
+
+### 🧠 2. LLM-Powered Reranking for Relevance Boost
+
+Top results from Weaviate are passed into an LLM (like **Qwen**, **Mistral**, or **DeepSeek**) via **OpenRouter API**. The LLM reranks products based on:
+- Query intent  
+- User context (session memory)  
+- Hidden relevance signals  
+
+It uses few-shot prompting with customizable templates to guide the LLM in sorting results.
+
+> ✅ **Why it matters**: LLMs correct semantic drift, prioritize truly relevant results, and make results feel _smart_.
+
+### 🧬 3. Personalization Engine via Session Memory
+
+The app tracks previous queries and builds a **contextual keyword memory**, which influences:
+- Query embeddings  
+- Reranking prompts  
+- Personalized recommendations  
+
+This creates a **lightweight, stateless personalization layer** — no login required.
+
+> ✅ **Why it matters**: Even short interactions feel personalized — like having a grocery-savvy assistant.
+
+### ⚙️ 4. Efficient, Modular, and Cachable
+
+- **Local cache** for embedding + LLM results to reduce latency  
+- **Fallback logic** for LLMs — auto-retries with backup models  
+- **CLI tooling** for ingestion & schema setup  
+- Deploys on **Hugging Face Spaces** + **Weaviate Cloud** effortlessly
+
+> ✅ **Why it matters**: Real-world robustness with fast, reliable UX
+
+---
+
+### 🧪 End-to-End Example Query Flow
+
+1. User enters: _"vegan cereal under 200 calories"_
+2. MiniLM (Sentence-Transformer ) embeds query to vector
+3. Weaviate searches 768-dim vector space for top 5 matches
+4. LLM (via OpenRouter) reranks the 5 results by intent-match
+5. Final output shown with raw + reranked sections
+6. Session saves the query → influences future recommendations
+
+---
+
 ## 🖼️ Architecture Overview
 
 <p align="center">
@@ -42,15 +96,6 @@ pinned: false
 
 ---
 
-## 🧪 Example Flow
-
-1. User enters: _"vegan cereal under 200 calories"_
-2. MiniLM embeds query → searches Weaviate for top matches
-3. LLM reranks results based on user intent
-4. Final output shown with raw + reranked sections
-5. Session saves the query → influences future recommendations
-
----
 
 ## 📽️ Live Demo
 
