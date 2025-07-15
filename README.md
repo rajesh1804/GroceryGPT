@@ -1,3 +1,15 @@
+---
+title: "GroceryGPT+"
+emoji: "🛒"
+colorFrom: "blue"
+colorTo: "green"
+sdk: streamlit
+sdk_version: "1.32.2"
+app_file: app.py
+pinned: false
+---
+
+
 # 🛒 GroceryGPT+ — Personalized Grocery Search Engine with LLM Reranking
 
 [![Built with Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-red?logo=streamlit)](https://streamlit.io)
