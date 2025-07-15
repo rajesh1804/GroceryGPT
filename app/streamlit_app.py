@@ -10,8 +10,8 @@ st.title("🛒 GroceryGPT+")
 st.markdown("Search groceries using **text** powered by  LLMs.")
 
 query = st.text_input("What are you looking for today?", 
-                      placeholder="e.g. organic apples, gluten-free pasta",
-                      icon="🔍")
+                      placeholder="🔍 e.g. organic apples, gluten-free pasta")
+
 if query:
     store_user_query(query)
     results = semantic_search(query)
