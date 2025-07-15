@@ -16,6 +16,7 @@ pinned: false
 [![Weaviate Vector DB](https://img.shields.io/badge/VectorDB-Weaviate-blue?logo=weaviate)](https://weaviate.io)
 [![Powered by OpenRouter](https://img.shields.io/badge/LLM-Qwen%2FMistral%2FDeepSeek-green)](https://openrouter.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Hugging Face Spaces](https://img.shields.io/badge/Deployed%20on-HuggingFace-orange?logo=huggingface)](https://huggingface.co/spaces/rajesh1804/grocerygpt)
 
 > 🚀 **GroceryGPT+** is a smart, real-time product search app combining **semantic vector search** with **LLM-powered reranking** and **personalized recommendations** — all production-ready.
 
@@ -35,7 +36,9 @@ pinned: false
 
 ## 🖼️ Architecture Overview
 
-![alt text](assets/architecture.png)
+<p align="center">
+  <img src="assets/architecture.png" alt="Architecture" width="600"/>
+</p>
 
 ---
 
@@ -46,6 +49,17 @@ pinned: false
 3. LLM reranks results based on user intent
 4. Final output shown with raw + reranked sections
 5. Session saves the query → influences future recommendations
+
+---
+
+## 📽️ Live Demo
+
+👉 Try it on [Hugging Face](https://huggingface.co/spaces/rajesh1804/grocerygpt)
+
+<!-- ![GroceryGPT+ Demo](assets/grocerygpt-demo.gif) -->
+<p align="center">
+  <img src="assets/grocerygpt-demo.gif" alt="Demo" width="600"/>
+</p>
 
 ---
 
@@ -87,7 +101,9 @@ streamlit run main.py
 
 ## 📁 Project Structure
 
-![alt text](assets/project_structure.png)
+<p align="center">
+  <img src="assets/project_structure.png" alt="Project Structure" width="600"/>
+</p>
 
 ---
 
