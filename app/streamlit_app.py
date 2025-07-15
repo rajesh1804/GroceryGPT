@@ -3,9 +3,15 @@ from search_agent import semantic_search
 from session_agent import store_user_query, get_personalized_keywords
 from llm_agent import rerank_results
 
+st.set_page_config(page_title="GroceryGPT+ - AI Grocery Search")
+
 st.title("🛒 GroceryGPT+")
 
-query = st.text_input("What are you looking for today?")
+st.markdown("Search groceries using **text** powered by  LLMs.")
+
+query = st.text_input("What are you looking for today?", 
+                      placeholder="e.g. organic apples, gluten-free pasta",
+                      icon="🔍")
 if query:
     store_user_query(query)
     results = semantic_search(query)
