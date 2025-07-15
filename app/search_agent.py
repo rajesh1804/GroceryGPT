@@ -3,8 +3,14 @@ import uuid
 import weaviate
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
+import os
 
-client = weaviate.Client(url="http://localhost:8080", additional_headers={})
+client = weaviate.Client(
+    url=os.getenv("WEAVIATE_URL"), 
+    auth_client_secret=weaviate.AuthApiKey(os.getenv("WEAVIATE_API_KEY")),
+    additional_headers={} # To use built-in vectorization modules set "X-OpenAI-Api-Key": os.getenv("OPENAI_API_KEY")
+    )
+
 model = SentenceTransformer('all-MiniLM-L6-v2')  # For text search
 
 def create_schema():
@@ -29,11 +35,13 @@ def ingest_data(progress_bar=True, batch_size=100):
     df = pd.read_csv('data/products_cleaned.csv')
 
     # Filter out already-ingested product UUIDs
+    print("🔍 Checking existing products...")
     existing_uuids = set()
     for _, row in df.iterrows():
         uid = str(uuid.uuid5(uuid.NAMESPACE_DNS, str(row["product_id"])))
         if client.data_object.exists(uid):
             existing_uuids.add(uid)
+    print(f"✅ Found {len(existing_uuids)} existing products.")
 
     df = df[~df["product_id"].apply(lambda pid: str(uuid.uuid5(uuid.NAMESPACE_DNS, str(pid))) in existing_uuids)]
     
@@ -43,6 +51,7 @@ def ingest_data(progress_bar=True, batch_size=100):
 
     iterator = tqdm(df.iterrows(), total=len(df), desc="Batch Ingesting") if progress_bar else df.iterrows()
 
+    print(f"⏳ Ingesting {len(df)} new products...")
     with client.batch(batch_size=batch_size) as batch:
         for _, row in iterator:
             uid = str(uuid.uuid5(uuid.NAMESPACE_DNS, str(row["product_id"])))
